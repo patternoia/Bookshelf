@@ -1,0 +1,17 @@
+  <tr>
+    <td><%= book.inv_number %></td>
+    <td><%= image_tag(book.img_url, :height => 100) %></td>
+    <td><%= link_to book.author, book %></td>
+    <td><%= book.name %></td>
+    <td><%= book.free_count %></td>
+    <td>
+      <table>
+          <% for order in book.orders %>
+            <tr>
+              <td> <%= order.user.email %> </td>
+              <td> <%= order.date_to.to_s %> </td>
+            </tr>
+          <% end %>
+      </table>
+    </td>
+  </tr>

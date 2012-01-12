@@ -1,0 +1,10 @@
+<h1>Listing books</h1>
+
+<%= render "header" %>
+
+<%= render :partial => "book", :collection => @books %>
+</table>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  inv_number: 1
+  img_url: MyString
+  author: MyString
+  name: MyString
+  free_count: 1
+
+two:
+  inv_number: 1
+  img_url: MyString
+  author: MyString
+  name: MyString
+  free_count: 1

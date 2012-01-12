@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "header" %>
+<%= render :partial => "book", :locals => { :book => @book } %>
+</table>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+
+<h2>Comments</h2>
+
+<%= "No comments :(" if @book.comments.empty? %>
+
+<% for comment in @book.comments %>
+  <%= comment.body %>
+  <%= comment.user.email %>
+  <hr />
+<% end %>
+
+<%= form_tag :action => "comment" %>
+  <%= text_area "comment", "body" %><br />
+  <%= submit_tag "Comment!" %>
+</form>
