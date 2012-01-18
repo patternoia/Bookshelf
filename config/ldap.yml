@@ -1,0 +1,13 @@
+## Enviornments
+
+development:
+  host: sts-msk-dc-01.sts.sitronics.com
+  port: 389
+
+test:
+  host: localhost
+  port: 3389
+
+production:
+  host: localhost
+  port: 636

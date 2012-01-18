@@ -5,6 +5,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.recoverable
       t.rememberable
       t.trackable
+      t.string :username
+      t.string :login
+      t.boolean :is_admin
 
       # t.encryptable
       # t.confirmable
@@ -16,6 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     end
 
     add_index :users, :email,                :unique => true
+    add_index :users, :login,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
