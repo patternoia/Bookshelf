@@ -13,11 +13,19 @@
 
 <% for comment in @book.comments %>
   <%= comment.body %>
-  <%= comment.user.email %>
+  <%= comment.user.username %>
   <hr />
 <% end %>
 
-<%= form_tag :action => "comment" %>
-  <%= text_area "comment", "body" %><br />
-  <%= submit_tag "Comment!" %>
-</form>
+<% if user_signed_in? %>
+
+	<%= form_tag :action => "comment", :id => @book %>
+	  <%= text_area "comment", "body" %><br />
+	  <%= submit_tag "Comment!" %>
+	</form>
+	<%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+<% else %>
+
+	<p>You are not authorized to comment</p>
+
+<% end %>

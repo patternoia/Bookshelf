@@ -32,3 +32,4 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem 'devise'
+gem 'devise_ldap_check_auth', :path => "C:/git/devise_ldap_check_auth"

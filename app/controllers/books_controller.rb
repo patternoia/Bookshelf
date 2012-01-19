@@ -83,6 +83,15 @@ class BooksController < ApplicationController
   
   # POST /books/comment
   def comment
-    
+    if user_signed_in?
+      comment = Book.find(params[:id]).comments.new(params[:comment])
+      comment.user = current_user
+      comment.save
+      flash[:notice] = "Comment added"
+      redirect_to :action => "show", :id => params[:id]
+    else
+      flash[:alert] = "Not signed in"
+      redirect_to :action => "show", :id => params[:id]
+    end
   end
 end
